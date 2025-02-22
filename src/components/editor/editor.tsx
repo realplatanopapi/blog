@@ -17,6 +17,11 @@ export function Editor({ initialContent = '', onUpdate }: EditorProps) {
     extensions,
     content: initialContent,
     onUpdate,
+    editorProps: {
+      attributes: {
+        class: 'prose prose-md focus:outline-none dark:prose-invert',
+      },
+    },
   })
 
   return <EditorContent editor={editor} />
