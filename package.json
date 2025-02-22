@@ -4,17 +4,25 @@
   "private": true,
   "scripts": {
     "chakra": "chakra",
+    "db:generate": "pnpm lint:prisma && prisma generate",
+    "db:migrate": "pnpm lint:prisma && prisma migrate dev",
+    "db:studio": "pnpm lint:prisma && prisma studio",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --cache",
+    "lint": "pnpm lint:prisma && pnpm lint:ts",
+    "lint:prisma": "prisma-lint prisma/schema/",
+    "lint:ts": "eslint --cache",
     "prepare": "husky"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.8.1",
     "@emotion/react": "^11.14.0",
+    "@prisma/client": "^6.4.1",
     "next": "15.1.7",
     "next-themes": "^0.4.4",
+    "prisma": "^6.4.1",
+    "prisma-lint": "^0.8.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0"
