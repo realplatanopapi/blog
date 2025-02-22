@@ -1,5 +1,7 @@
 import { NextAdminOptions } from '@premieroctet/next-admin'
 
+import { PostContentInput } from '@/features/admin/components'
+
 export const options: NextAdminOptions = {
   title: '⚡️ Blog',
   model: {
@@ -18,11 +20,11 @@ export const options: NextAdminOptions = {
       },
       edit: {
         fields: {
-          document: {
-            format: 'richtext-html',
+          content: {
+            input: <PostContentInput />,
           },
         },
-        display: ['id', 'title', 'document'],
+        display: ['id', 'title', 'content'],
       },
     },
   },

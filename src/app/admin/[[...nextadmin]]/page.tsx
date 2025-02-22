@@ -20,7 +20,7 @@ export default async function AdminPage(props: AdminPageProps) {
     basePath: '/admin',
     apiBasePath: '/api/admin',
     prisma: dbClient,
-    ...options,
+    options,
   })
 
   return <NextAdmin {...adminProps} />
