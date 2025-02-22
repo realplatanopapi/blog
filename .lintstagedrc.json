@@ -1,0 +1,5 @@
+{
+  "*": ["prettier --ignore-unknown --write"],
+  "*.{js,jsx,ts,tsx}": ["eslint --cache --fix"],
+  "*.prisma": ["prisma format", "prisma-lint"]
+}

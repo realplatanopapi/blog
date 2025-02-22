@@ -1,4 +1,4 @@
-import { defineTokens } from "@chakra-ui/react"
+import { defineTokens } from '@chakra-ui/react'
 
 export const zIndex = defineTokens.zIndex({
   hide: {
