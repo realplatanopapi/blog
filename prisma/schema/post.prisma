@@ -5,7 +5,7 @@ model Post {
 
   slug    String @unique
   title   String
-  content String
+  content Json   @default("{}")
 
   @@map("post")
 }
