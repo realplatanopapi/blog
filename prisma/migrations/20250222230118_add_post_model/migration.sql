@@ -5,7 +5,7 @@ CREATE TABLE "post" (
     "updated_at" TIMESTAMP(3) NOT NULL,
     "slug" TEXT NOT NULL,
     "title" TEXT NOT NULL,
-    "document" JSONB NOT NULL,
+    "content" TEXT NOT NULL,
 
     CONSTRAINT "post_pkey" PRIMARY KEY ("id")
 );

@@ -3,9 +3,9 @@ model Post {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
-  slug     String @unique
-  title    String
-  document Json
+  slug    String @unique
+  title   String
+  content String
 
   @@map("post")
 }
