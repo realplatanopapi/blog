@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/components/ui/theme-provider";
+import { ThemeProvider } from "@/components";
 import type { Metadata } from "next";
 import { PropsWithChildren } from "react";
 

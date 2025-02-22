@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       "next-themes",
       "react-icons",
     ],
+    typedRoutes: true,
   },
 };
 

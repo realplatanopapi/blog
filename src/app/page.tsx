@@ -1,7 +1,15 @@
+import { TextLink } from "@/components";
+
 export default function Home() {
   return (
     <main>
-      <div>Hello world!</div>
+      <TextLink
+        href={{
+          pathname: "/p/hello-world",
+        }}
+      >
+        Hello world!
+      </TextLink>
     </main>
   );
 }
