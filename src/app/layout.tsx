@@ -1,6 +1,7 @@
-import { ThemeProvider } from '@/components'
 import type { Metadata } from 'next'
 import { PropsWithChildren } from 'react'
+
+import { ThemeProvider } from '@/components'
 
 export const metadata: Metadata = {
   title: 'Blog',

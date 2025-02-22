@@ -1,4 +1,5 @@
 import { createSystem, defaultBaseConfig, defineConfig } from '@chakra-ui/react'
+
 import { animationStyles } from './animation-styles'
 import { breakpoints } from './breakpoints'
 import { globalCss } from './global-css'
