@@ -1,12 +1,12 @@
 import { PropsWithChildren } from 'react'
 
-import { Box, Container, Text, TextLink } from '@/components'
+import { Container, Flex, Text, TextLink } from '@/components'
 
 export function BlogShell({ children }: PropsWithChildren) {
   return (
     <Container as="main" maxWidth="prose" minHeight="calc(100vh + 1px)" py={6} px={4}>
       {children}
-      <Box pt={6}>
+      <Flex justifyContent="space-between" pt={8}>
         <Text color="fg.muted" fontSize="sm">
           <TextLink
             color="inherit"
@@ -17,9 +17,11 @@ export function BlogShell({ children }: PropsWithChildren) {
           >
             coquito.io
           </TextLink>{' '}
+        </Text>
+        <Text color="fg.muted" fontSize="sm">
           © {new Date().getFullYear()}
         </Text>
-      </Box>
+      </Flex>
     </Container>
   )
 }
