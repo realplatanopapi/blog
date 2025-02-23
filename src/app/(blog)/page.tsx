@@ -1,4 +1,5 @@
-import { Heading, LogoIcon, LogoLink, Stack, Text, TextLink } from '@/components'
+import { Heading, LogoIcon, LogoLink, Stack, Text } from '@/components'
+import { PostPreviewLink } from '@/features/posts/components'
 import { dbClient } from '@/lib/db'
 
 export default async function Home() {
@@ -12,30 +13,21 @@ export default async function Home() {
   })
 
   return (
-    <Stack gap={4}>
-      <LogoLink>
-        <LogoIcon />
-      </LogoLink>
-      <Heading textAlign="center" as="h1" size="3xl">
-        Coquito.io
-      </Heading>
+    <Stack gap={8}>
+      <Stack gap={4}>
+        <LogoLink>
+          <LogoIcon />
+        </LogoLink>
+        <Heading textAlign="center" as="h1" size="3xl">
+          Coquito.io
+        </Heading>
+      </Stack>
       <Text fontSize="lg" textAlign="justify">
         Posts about the human side of software engineering. And also, Python and TypeScript.
       </Text>
-      <Stack gap={2}>
+      <Stack borderTopWidth={1} borderColor="bg.subtle" pt={6} gap="inherit">
         {posts.map((post) => (
-          <Text key={post.id}>
-            <TextLink
-              href={{
-                pathname: `/p/${post.slug}`,
-              }}
-            >
-              {post.title}
-            </TextLink>
-            <Text as="span" fontSize="sm" color="gray.500">
-              {post?.subtitle}
-            </Text>
-          </Text>
+          <PostPreviewLink key={post.id} post={post} />
         ))}
       </Stack>
     </Stack>

@@ -10,7 +10,7 @@ export const postExtension = Prisma.defineExtension({
           slug: true,
         },
         compute(post) {
-          return new URL(`/p/${post.slug}`, 'http://localhost:3000').toString()
+          return new URL(`/${post.slug}`, 'http://localhost:3000').toString()
         },
       },
     },
