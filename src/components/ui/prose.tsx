@@ -90,7 +90,7 @@ export const Prose = chakra('div', {
       boxShadow: '0 0 0 1px var(--shadow),0 1px 0 1px var(--shadow)',
     },
     '& code': {
-      fontSize: '0.925em',
+      fontSize: '0.75em',
       letterSpacing: '-0.01em',
       borderRadius: 'md',
       borderWidth: '1px',
@@ -113,7 +113,7 @@ export const Prose = chakra('div', {
       marginTop: '1.6em',
       marginBottom: '1.6em',
       borderRadius: 'md',
-      fontSize: '0.9em',
+      fontSize: '0.75em',
       paddingTop: '0.65em',
       paddingBottom: '0.65em',
       paddingInlineEnd: '1em',

@@ -17,7 +17,7 @@ export const linkRecipe = defineRecipe({
         color: 'colorPalette.fg',
         textDecoration: 'underline',
         textUnderlineOffset: '3px',
-        textDecorationColor: 'currentColor/20',
+        textDecorationColor: 'brand.cocoGreen',
       },
       plain: {
         color: 'colorPalette.fg',
@@ -30,6 +30,6 @@ export const linkRecipe = defineRecipe({
     },
   },
   defaultVariants: {
-    variant: 'plain',
+    variant: 'underline',
   },
 })

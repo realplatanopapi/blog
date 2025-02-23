@@ -14,9 +14,11 @@ export function PostPreviewLink({ post, ...props }: PostPreviewLinkProps) {
             pathname: `/${post.slug}`,
           }}
         >
-          <Text fontSize="xl">{post.title}</Text>
+          <Text fontSize="xl" fontWeight="semibold" textDecoration="underline" textDecorationColor="brand.cocoGreen">
+            {post.title}
+          </Text>
         </LinkOverlay>
-        {post.subtitle && <Text color="fg.subtle">{post.subtitle}</Text>}
+        {post.subtitle && <Text color="fg.muted">{post.subtitle}</Text>}
       </Stack>
     </LinkBox>
   )

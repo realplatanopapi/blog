@@ -63,6 +63,14 @@ export const colors = defineSemanticTokens.colors({
       },
     },
   },
+  brand: {
+    cocoGreen: {
+      value: '#00C95C',
+    },
+    skyBlue: {
+      value: '#00F8FF',
+    },
+  },
   fg: {
     DEFAULT: {
       value: {

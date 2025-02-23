@@ -27,10 +27,10 @@ export function PostView({ post }: PostViewProps) {
         <Heading as="h1" textAlign="center" size="3xl">
           {post.title}
         </Heading>
-        <Prose dangerouslySetInnerHTML={{ __html: html }} />
+        <Prose dangerouslySetInnerHTML={{ __html: html }} size="lg" />
       </Stack>
       <Stack py={4} borderTop="1px" borderTopColor="border.subtle" borderTopStyle="solid">
-        <Text>
+        <Text color="fg.muted">
           Like what you see? <TextLink href="/">Read more here.</TextLink>
         </Text>
       </Stack>
