@@ -1,21 +1,25 @@
 'use client'
 
-import { Content, EditorContent, useEditor, UseEditorOptions } from '@tiptap/react'
+import { EditorContent, useEditor, UseEditorOptions } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
+
+import { Content } from './types'
 
 const extensions = [StarterKit]
 
 export type EditorOnUpdate = UseEditorOptions['onUpdate']
 
 export interface EditorProps {
-  initialContent?: Content
+  content?: Content
   onUpdate?: EditorOnUpdate
+  editable?: boolean
 }
 
-export function Editor({ initialContent = '', onUpdate }: EditorProps) {
+export function Editor({ content = {}, editable = true, onUpdate }: EditorProps) {
   const editor = useEditor({
     extensions,
-    content: initialContent,
+    content,
+    editable,
     onUpdate,
     editorProps: {
       attributes: {

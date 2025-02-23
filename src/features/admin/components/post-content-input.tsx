@@ -1,12 +1,13 @@
 'use client'
 
 import { CustomInputProps } from '@premieroctet/next-admin'
-import { useMemo, useState } from 'react'
+import { ChangeEvent, useEffect, useMemo, useState } from 'react'
 
 import { Editor, EditorOnUpdate } from '@/components/editor/editor'
+import { Content } from '@/components/editor/types'
 
 export function PostContentInput(props: CustomInputProps) {
-  const initialContent: object = useMemo(() => {
+  const initialContent: Content = useMemo(() => {
     return JSON.parse(props.value ?? '{}')
   }, [props.value])
 
@@ -15,6 +16,14 @@ export function PostContentInput(props: CustomInputProps) {
     return JSON.stringify(currentContent)
   }, [currentContent])
 
+  useEffect(() => {
+    props.onChange?.({
+      target: {
+        value: currentContentString,
+      },
+    } as ChangeEvent<HTMLInputElement>)
+  }, [currentContentString])
+
   const onChange: EditorOnUpdate = (updateProps) => {
     const newContent = updateProps.editor.getJSON()
     setCurrentContent(newContent)
@@ -22,7 +31,7 @@ export function PostContentInput(props: CustomInputProps) {
 
   return (
     <>
-      <Editor initialContent={initialContent} onUpdate={onChange} />
+      <Editor content={initialContent as Content} onUpdate={onChange} />
       <input type="hidden" name={props.name} value={currentContentString} />
     </>
   )

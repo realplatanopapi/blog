@@ -1,4 +1,5 @@
-import { Text } from '@/components'
+import { PostView } from '@/features/posts/views/post-view'
+import { dbClient } from '@/lib/db'
 
 interface PostPageProps {
   params: Promise<{ slug: string }>
@@ -7,5 +8,11 @@ interface PostPageProps {
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params
 
-  return <Text>{slug}</Text>
+  const post = await dbClient.post.findFirstOrThrow({
+    where: {
+      slug,
+    },
+  })
+
+  return <PostView post={post} />
 }
