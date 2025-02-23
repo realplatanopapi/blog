@@ -43,24 +43,36 @@ importers:
       envalid:
         specifier: ^8.0.0
         version: 8.0.0
+      highlight.js:
+        specifier: ^11.11.1
+        version: 11.11.1
       next:
         specifier: 15.1.7
         version: 15.1.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       next-themes:
         specifier: ^0.4.4
         version: 0.4.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      prism-themes:
+        specifier: ^1.9.0
+        version: 1.9.0
       prisma:
         specifier: ^6.4.1
         version: 6.4.1(typescript@5.7.3)
       prisma-lint:
         specifier: ^0.8.0
         version: 0.8.0(typescript@5.7.3)
+      prismjs:
+        specifier: ^1.29.0
+        version: 1.29.0
       react:
         specifier: ^19.0.0
         version: 19.0.0
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      react-highlight:
+        specifier: ^0.15.0
+        version: 0.15.0
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@19.0.0)
@@ -80,6 +92,9 @@ importers:
       '@premieroctet/next-admin-generator-prisma':
         specifier: ^0.0.3
         version: 0.0.3(@premieroctet/next-admin@7.3.0(@prisma/client@6.4.1(prisma@6.4.1(typescript@5.7.3))(typescript@5.7.3))(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(monaco-editor@0.52.2)(next@15.1.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(prisma@6.4.1(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.17)(typescript@5.7.3))
+      '@types/highlight.js':
+        specifier: ^10.1.0
+        version: 10.1.0
       '@types/node':
         specifier: ^20
         version: 20.17.19
@@ -89,6 +104,9 @@ importers:
       '@types/react-dom':
         specifier: ^19
         version: 19.0.4(@types/react@19.0.10)
+      '@types/react-highlight':
+        specifier: ^0.12.8
+        version: 0.12.8
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.5.3)
@@ -1689,6 +1707,11 @@ packages:
     resolution:
       { integrity: sha512-s7YPsNVfnsng5L8sKnG/Gbb2tiwwJTY1conOkJzTMRvJAlLFW1nEua+ADsJQu8N1c0oTHx9+d5nqg10WuT9gHQ== }
 
+  '@types/highlight.js@10.1.0':
+    resolution:
+      { integrity: sha512-77hF2dGBsOgnvZll1vymYiNUtqJ8cJfXPD6GG/2M0aLRc29PkvB7Au6sIDjIEFcSICBhCh2+Pyq6WSRS7LUm6A== }
+    deprecated: This is a stub types definition. highlight.js provides its own type definitions, so you do not need this installed.
+
   '@types/is-hotkey@0.1.10':
     resolution:
       { integrity: sha512-RvC8KMw5BCac1NvRRyaHgMMEtBaZ6wh0pyPTBu7izn4Sj/AX9Y4aXU5c7rX8PnM/knsuUpC1IeoBkANtxBypsQ== }
@@ -1742,6 +1765,10 @@ packages:
       { integrity: sha512-4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg== }
     peerDependencies:
       '@types/react': ^19.0.0
+
+  '@types/react-highlight@0.12.8':
+    resolution:
+      { integrity: sha512-V7O7zwXUw8WSPd//YUO8sz489J/EeobJljASGhP0rClrvq+1Y1qWEpToGu+Pp7YuChxhAXSgkLkrOYpZX5A62g== }
 
   '@types/react@19.0.10':
     resolution:
@@ -3185,6 +3212,15 @@ packages:
       { integrity: sha512-qlspKUK7IlSQv2o+5I7yhUd7TxlOG2Vr5LTa3ve2XSNVKAL/n/u/7KLvKmFNimomDIKvZFXWHv0T12mv7rT8Aw== }
     engines: { node: '>=8' }
 
+  highlight.js@10.7.3:
+    resolution:
+      { integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A== }
+
+  highlight.js@11.11.1:
+    resolution:
+      { integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w== }
+    engines: { node: '>=12.0.0' }
+
   hoist-non-react-statics@3.3.2:
     resolution:
       { integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw== }
@@ -4144,6 +4180,10 @@ packages:
     engines: { node: '>=14' }
     hasBin: true
 
+  prism-themes@1.9.0:
+    resolution:
+      { integrity: sha512-tX2AYsehKDw1EORwBps+WhBFKc2kxfoFpQAjxBndbZKr4fRmMkv47XN0BghC/K1qwodB1otbe4oF23vUTFDokw== }
+
   prisma-json-schema-generator@5.1.5:
     resolution:
       { integrity: sha512-OHyPkwgIhMf+z8fToj8D4xMX55RVok5ugDa7J2VdMukcNIaAewWhe3k7Jv2YflJZE+6cB6LMWfkub+OGcFG+wA== }
@@ -4164,6 +4204,11 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  prismjs@1.29.0:
+    resolution:
+      { integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q== }
+    engines: { node: '>=6' }
 
   prompts@2.4.2:
     resolution:
@@ -4287,6 +4332,10 @@ packages:
       { integrity: sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ== }
     peerDependencies:
       react: ^19.0.0
+
+  react-highlight@0.15.0:
+    resolution:
+      { integrity: sha512-5uV/b/N4Z421GSVVe05fz+OfTsJtFzx/fJBdafZyw4LS70XjIZwgEx3Lrkfc01W/RzZ2Dtfb0DApoaJFAIKBtA== }
 
   react-icons@5.5.0:
     resolution:
@@ -6542,6 +6591,10 @@ snapshots:
     dependencies:
       '@types/node': 20.17.19
 
+  '@types/highlight.js@10.1.0':
+    dependencies:
+      highlight.js: 11.11.1
+
   '@types/is-hotkey@0.1.10':
     optional: true
 
@@ -6576,6 +6629,10 @@ snapshots:
   '@types/parse-json@4.0.2': {}
 
   '@types/react-dom@19.0.4(@types/react@19.0.10)':
+    dependencies:
+      '@types/react': 19.0.10
+
+  '@types/react-highlight@0.12.8':
     dependencies:
       '@types/react': 19.0.10
 
@@ -8222,6 +8279,10 @@ snapshots:
 
   hexoid@2.0.0: {}
 
+  highlight.js@10.7.3: {}
+
+  highlight.js@11.11.1: {}
+
   hoist-non-react-statics@3.3.2:
     dependencies:
       react-is: 16.13.1
@@ -8946,6 +9007,8 @@ snapshots:
 
   prettier@3.5.2: {}
 
+  prism-themes@1.9.0: {}
+
   prisma-json-schema-generator@5.1.5:
     dependencies:
       '@prisma/generator-helper': 5.8.1
@@ -8975,6 +9038,8 @@ snapshots:
       typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
+
+  prismjs@1.29.0: {}
 
   prompts@2.4.2:
     dependencies:
@@ -9117,6 +9182,10 @@ snapshots:
     dependencies:
       react: 19.0.0
       scheduler: 0.25.0
+
+  react-highlight@0.15.0:
+    dependencies:
+      highlight.js: 10.7.3
 
   react-icons@5.5.0(react@19.0.0):
     dependencies:

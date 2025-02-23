@@ -1,0 +1,8 @@
+@import 'highlight.js/styles/tokyo-night-dark.css';
+
+.post-renderer pre {
+  padding: 0;
+}
+.post-renderer pre code {
+  padding: 1em;
+}
