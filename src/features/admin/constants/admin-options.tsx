@@ -24,7 +24,7 @@ export const adminOptions: NextAdminOptions = {
             input: <PostContentInput />,
           },
           slug: {
-            input: <input readOnly />,
+            input: <input />,
           },
         },
         display: ['title', 'slug', 'subtitle', 'published', 'content', 'id'],
