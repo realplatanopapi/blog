@@ -20,6 +20,7 @@ export function Editor({ content = {}, editable = true, onUpdate }: EditorProps)
     extensions,
     content,
     editable,
+    immediatelyRender: false,
     onUpdate,
     editorProps: {
       attributes: {

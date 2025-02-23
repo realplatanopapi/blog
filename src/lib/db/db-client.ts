@@ -11,6 +11,7 @@ function createDBClient() {
 }
 
 type DBClient = ReturnType<typeof createDBClient>
+export type PlainDBClient = PrismaClient
 
 const globalForDBClient = global as unknown as {
   dbClient: DBClient

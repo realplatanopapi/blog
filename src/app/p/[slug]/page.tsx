@@ -1,3 +1,4 @@
+import { Content } from '@/components/editor/types'
 import { PostView } from '@/features/posts/views/post-view'
 import { dbClient } from '@/lib/db'
 
@@ -14,7 +15,14 @@ export default async function PostPage({ params }: PostPageProps) {
     },
   })
 
-  return <PostView post={post} />
+  return (
+    <PostView
+      post={{
+        title: post.title,
+        content: post.content as Content,
+      }}
+    />
+  )
 }
 
 export const dynamic = 'force-dynamic'

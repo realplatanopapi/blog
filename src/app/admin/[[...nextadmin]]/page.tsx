@@ -2,7 +2,7 @@ import { NextAdmin, PageProps as NextAdminPageProps } from '@premieroctet/next-a
 import { getNextAdminProps } from '@premieroctet/next-admin/appRouter'
 
 import { options } from '@/features/admin'
-import { dbClient } from '@/lib/db'
+import { dbClient, PlainDBClient } from '@/lib/db'
 interface AdminPageProps {
   params: Promise<NextAdminPageProps['params']>
   searchParams: Promise<NextAdminPageProps['searchParams']>
@@ -17,7 +17,7 @@ export default async function AdminPage(props: AdminPageProps) {
     searchParams,
     basePath: '/admin',
     apiBasePath: '/api/admin',
-    prisma: dbClient,
+    prisma: dbClient as unknown as PlainDBClient,
     options,
   })
 
