@@ -2,10 +2,12 @@ import { PrismaClient } from '@prisma/client'
 
 import { privateConfig } from '@/config/private-config'
 
+import { postExtension } from './extensions/post'
+
 function createDBClient() {
   return new PrismaClient({
     datasourceUrl: privateConfig.DATABASE_URL,
-  })
+  }).$extends(postExtension)
 }
 
 type DBClient = ReturnType<typeof createDBClient>

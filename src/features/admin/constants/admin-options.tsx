@@ -24,7 +24,7 @@ export const options: NextAdminOptions = {
             input: <PostContentInput />,
           },
         },
-        display: ['id', 'title', 'content'],
+        display: ['title', 'content', 'id'],
       },
     },
   },
