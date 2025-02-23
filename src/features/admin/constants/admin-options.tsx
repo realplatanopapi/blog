@@ -15,7 +15,7 @@ export const options: NextAdminOptions = {
           { format: 'CSV', url: '/api/posts/export?format=csv' },
           { format: 'JSON', url: '/api/posts/export?format=json' },
         ],
-        display: ['title', 'id', 'createdAt', 'updatedAt'],
+        display: ['title', 'published', 'id', 'createdAt', 'updatedAt'],
         search: ['title'],
       },
       edit: {
@@ -24,7 +24,7 @@ export const options: NextAdminOptions = {
             input: <PostContentInput />,
           },
         },
-        display: ['title', 'content', 'id'],
+        display: ['title', 'published', 'content', 'id'],
       },
     },
   },
