@@ -1,10 +1,7 @@
 'use client'
 
-import { generateHTML } from '@tiptap/html'
-import StarterKit from '@tiptap/starter-kit'
-import { useMemo } from 'react'
-
-import { Content, Heading, LogoIcon, LogoLink, Prose, Stack, Text, TextLink } from '@/components'
+import { Content, Heading, LogoIcon, LogoLink, Stack, Text, TextLink } from '@/components'
+import { PostRenderer } from '@/features/posts/components'
 
 interface PostViewProps {
   post: {
@@ -14,10 +11,6 @@ interface PostViewProps {
 }
 
 export function PostView({ post }: PostViewProps) {
-  const html = useMemo(() => {
-    return generateHTML(post.content as Content, [StarterKit])
-  }, [post.content])
-
   return (
     <Stack gap={4}>
       <LogoLink>
@@ -27,7 +20,7 @@ export function PostView({ post }: PostViewProps) {
         <Heading as="h1" textAlign="center" size="3xl">
           {post.title}
         </Heading>
-        <Prose dangerouslySetInnerHTML={{ __html: html }} size="lg" />
+        <PostRenderer content={post.content as Content} />
       </Stack>
       <Stack py={4} borderTop="1px" borderTopColor="border.subtle" borderTopStyle="solid">
         <Text color="fg.muted">
