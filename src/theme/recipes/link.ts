@@ -18,6 +18,9 @@ export const linkRecipe = defineRecipe({
         textDecoration: 'underline',
         textUnderlineOffset: '3px',
         textDecorationColor: 'brand.cocoGreen',
+        _hover: {
+          color: 'brand.cocoGreen',
+        },
       },
       plain: {
         color: 'colorPalette.fg',

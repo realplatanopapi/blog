@@ -7,14 +7,21 @@ interface PostPreviewLinkProps extends LinkBoxProps {
 
 export function PostPreviewLink({ post, ...props }: PostPreviewLinkProps) {
   return (
-    <LinkBox {...props}>
+    <LinkBox className="group" {...props}>
       <Stack>
         <LinkOverlay
           href={{
             pathname: `/${post.slug}`,
           }}
         >
-          <Text fontSize="xl" fontWeight="semibold" textDecoration="underline" textDecorationColor="brand.cocoGreen">
+          <Text
+            fontSize="xl"
+            fontWeight="semibold"
+            _groupHover={{
+              color: 'brand.cocoGreen',
+              textDecoration: 'underline',
+            }}
+          >
             {post.title}
           </Text>
         </LinkOverlay>
