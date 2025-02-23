@@ -16,3 +16,5 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return <PostView post={post} />
 }
+
+export const dynamic = 'force-dynamic'
