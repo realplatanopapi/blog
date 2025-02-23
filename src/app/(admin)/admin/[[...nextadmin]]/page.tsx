@@ -1,3 +1,5 @@
+import '@/features/admin/styles/admin.css'
+
 import { NextAdmin, PageProps as NextAdminPageProps } from '@premieroctet/next-admin'
 import { getNextAdminProps } from '@premieroctet/next-admin/appRouter'
 

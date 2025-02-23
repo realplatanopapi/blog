@@ -1,5 +1,6 @@
 import { Heading, LogoIcon, LogoLink, Stack, Text, TextLink } from '@/components'
 import { dbClient } from '@/lib/db'
+
 export default async function Home() {
   const posts = await dbClient.post.findMany({
     where: {
@@ -18,7 +19,10 @@ export default async function Home() {
       <Heading textAlign="center" as="h1" size="3xl">
         Coquito.io
       </Heading>
-      <div>
+      <Text fontSize="lg" textAlign="justify">
+        Posts about the human side of software engineering. And also, Python and TypeScript.
+      </Text>
+      <Stack gap={2}>
         {posts.map((post) => (
           <Text key={post.id}>
             <TextLink
@@ -29,11 +33,11 @@ export default async function Home() {
               {post.title}
             </TextLink>
             <Text as="span" fontSize="sm" color="gray.500">
-              {post.createdAt.toLocaleDateString()}
+              {post?.subtitle}
             </Text>
           </Text>
         ))}
-      </div>
+      </Stack>
     </Stack>
   )
 }

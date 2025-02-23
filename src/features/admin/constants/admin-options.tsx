@@ -15,8 +15,8 @@ export const adminOptions: NextAdminOptions = {
       icon: 'NewspaperIcon',
       permissions: ['edit', 'delete', 'create'],
       list: {
-        display: ['title', 'published', 'id', 'createdAt', 'updatedAt'],
-        search: ['title'],
+        display: ['title', 'published', 'slug', 'id', 'createdAt', 'updatedAt'],
+        search: ['title', 'subtitle'],
       },
       edit: {
         fields: {
@@ -27,7 +27,7 @@ export const adminOptions: NextAdminOptions = {
             input: <input readOnly />,
           },
         },
-        display: ['title', 'slug', 'published', 'content', 'id'],
+        display: ['title', 'slug', 'subtitle', 'published', 'content', 'id'],
         hooks: {
           beforeDb: async (data, mode) => {
             const postData = data as unknown as Prisma.PostCreateInput
