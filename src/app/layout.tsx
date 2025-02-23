@@ -4,8 +4,8 @@ import { PropsWithChildren } from 'react'
 import { ThemeProvider } from '@/components'
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: '',
+  title: 'Coquito.io',
+  description: 'A blog about the human side of software engineering.',
 }
 
 export default function RootLayout({ children }: PropsWithChildren) {

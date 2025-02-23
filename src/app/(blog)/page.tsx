@@ -18,8 +18,8 @@ export default async function Home() {
         <LogoLink>
           <LogoIcon />
         </LogoLink>
-        <Heading textAlign="center" as="h1" size="3xl">
-          Coquito.io
+        <Heading fontWeight="bold" textAlign="center" as="h1" size="3xl">
+          coquito.io
         </Heading>
       </Stack>
       <Text color="fg.muted" fontSize="lg" textAlign="center" mx="auto" maxWidth="30ch">
