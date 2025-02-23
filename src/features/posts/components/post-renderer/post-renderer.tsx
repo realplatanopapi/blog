@@ -1,9 +1,6 @@
-import './post-renderer.css'
-
 import { generateHTML } from '@tiptap/html'
 import StarterKit from '@tiptap/starter-kit'
 import { useMemo } from 'react'
-import Highlight from 'react-highlight'
 
 import { Content, Prose } from '@/components'
 
@@ -16,9 +13,5 @@ export function PostRenderer({ content }: PostRendererProps) {
     return generateHTML(content, [StarterKit])
   }, [content])
 
-  return (
-    <Prose className="post-renderer">
-      <Highlight innerHTML={true}>{html}</Highlight>
-    </Prose>
-  )
+  return <Prose dangerouslySetInnerHTML={{ __html: html }} />
 }
