@@ -1,5 +1,6 @@
 import { NextAdminOptions } from '@premieroctet/next-admin'
-import { Post } from '@prisma/client'
+import { Post, Prisma } from '@prisma/client'
+import slugify from '@sindresorhus/slugify'
 
 import { PostPublishService } from '@/domain/posts'
 import { PostContentInput } from '@/features/admin/components'
@@ -22,8 +23,25 @@ export const adminOptions: NextAdminOptions = {
           content: {
             input: <PostContentInput />,
           },
+          slug: {
+            input: <input readOnly />,
+          },
         },
-        display: ['title', 'published', 'content', 'id'],
+        display: ['title', 'slug', 'published', 'content', 'id'],
+        hooks: {
+          beforeDb: async (data, mode) => {
+            const postData = data as unknown as Prisma.PostCreateInput
+            if (mode === 'create') {
+              const slug = slugify(postData.title, {
+                lowercase: true,
+              })
+
+              data.slug = slug
+            }
+
+            return data
+          },
+        },
       },
       actions: [
         {
