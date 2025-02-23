@@ -1,10 +1,12 @@
 import { createHandler } from '@premieroctet/next-admin/appHandler'
 
-import { dbClient } from '@/lib/db'
+import { adminOptions } from '@/features/admin'
+import { dbClient, PlainDBClient } from '@/lib/db'
 
 const { run } = createHandler({
   apiBasePath: '/api/admin',
-  prisma: dbClient,
+  prisma: dbClient as unknown as PlainDBClient,
+  options: adminOptions,
 })
 
 export const DELETE = run
