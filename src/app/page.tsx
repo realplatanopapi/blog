@@ -11,15 +11,13 @@ export default async function Home() {
   })
 
   return (
-    <main>
-      <Stack>
-        <LogoLink>
-          <LogoIcon />
-        </LogoLink>
-        <Heading as="h1" size="2xl">
-          Coquito.io
-        </Heading>
-      </Stack>
+    <Stack gap={4}>
+      <LogoLink>
+        <LogoIcon />
+      </LogoLink>
+      <Heading textAlign="center" as="h1" size="3xl">
+        Coquito.io
+      </Heading>
       <div>
         {posts.map((post) => (
           <Text key={post.id}>
@@ -36,7 +34,7 @@ export default async function Home() {
           </Text>
         ))}
       </div>
-    </main>
+    </Stack>
   )
 }
 

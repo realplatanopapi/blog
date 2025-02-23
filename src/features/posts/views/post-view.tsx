@@ -4,7 +4,7 @@ import { generateHTML } from '@tiptap/html'
 import StarterKit from '@tiptap/starter-kit'
 import { useMemo } from 'react'
 
-import { Container, Content, Heading, LogoIcon, LogoLink, Prose, Stack, Text, TextLink } from '@/components'
+import { Content, Heading, LogoIcon, LogoLink, Prose, Stack, Text, TextLink } from '@/components'
 
 interface PostViewProps {
   post: {
@@ -19,23 +19,21 @@ export function PostView({ post }: PostViewProps) {
   }, [post.content])
 
   return (
-    <Container maxWidth="prose">
-      <Stack gap={4}>
-        <LogoLink>
-          <LogoIcon />
-        </LogoLink>
-        <Stack as="article" gap={4}>
-          <Heading as="h1" textAlign="center" size="3xl">
-            {post.title}
-          </Heading>
-          <Prose dangerouslySetInnerHTML={{ __html: html }} />
-        </Stack>
-        <Stack py={4} borderTop="1px" borderTopColor="border.subtle" borderTopStyle="solid">
-          <Text>
-            Like what you see? <TextLink href="/">Read more here.</TextLink>
-          </Text>
-        </Stack>
+    <Stack gap={4}>
+      <LogoLink>
+        <LogoIcon />
+      </LogoLink>
+      <Stack as="article" gap={4}>
+        <Heading as="h1" textAlign="center" size="3xl">
+          {post.title}
+        </Heading>
+        <Prose dangerouslySetInnerHTML={{ __html: html }} />
       </Stack>
-    </Container>
+      <Stack py={4} borderTop="1px" borderTopColor="border.subtle" borderTopStyle="solid">
+        <Text>
+          Like what you see? <TextLink href="/">Read more here.</TextLink>
+        </Text>
+      </Stack>
+    </Stack>
   )
 }
