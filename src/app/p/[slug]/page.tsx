@@ -12,6 +12,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const post = await dbClient.post.findFirstOrThrow({
     where: {
       slug,
+      published: true,
     },
   })
 
