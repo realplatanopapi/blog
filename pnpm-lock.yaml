@@ -52,18 +52,12 @@ importers:
       next-themes:
         specifier: ^0.4.4
         version: 0.4.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      prism-themes:
-        specifier: ^1.9.0
-        version: 1.9.0
       prisma:
         specifier: ^6.4.1
         version: 6.4.1(typescript@5.7.3)
       prisma-lint:
         specifier: ^0.8.0
         version: 0.8.0(typescript@5.7.3)
-      prismjs:
-        specifier: ^1.29.0
-        version: 1.29.0
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -4180,10 +4174,6 @@ packages:
     engines: { node: '>=14' }
     hasBin: true
 
-  prism-themes@1.9.0:
-    resolution:
-      { integrity: sha512-tX2AYsehKDw1EORwBps+WhBFKc2kxfoFpQAjxBndbZKr4fRmMkv47XN0BghC/K1qwodB1otbe4oF23vUTFDokw== }
-
   prisma-json-schema-generator@5.1.5:
     resolution:
       { integrity: sha512-OHyPkwgIhMf+z8fToj8D4xMX55RVok5ugDa7J2VdMukcNIaAewWhe3k7Jv2YflJZE+6cB6LMWfkub+OGcFG+wA== }
@@ -4204,11 +4194,6 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
-
-  prismjs@1.29.0:
-    resolution:
-      { integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q== }
-    engines: { node: '>=6' }
 
   prompts@2.4.2:
     resolution:
@@ -9007,8 +8992,6 @@ snapshots:
 
   prettier@3.5.2: {}
 
-  prism-themes@1.9.0: {}
-
   prisma-json-schema-generator@5.1.5:
     dependencies:
       '@prisma/generator-helper': 5.8.1
@@ -9038,8 +9021,6 @@ snapshots:
       typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
-
-  prismjs@1.29.0: {}
 
   prompts@2.4.2:
     dependencies:
