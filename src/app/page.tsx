@@ -1,6 +1,5 @@
-import { Heading, Text, TextLink } from '@/components'
+import { Heading, LogoIcon, LogoLink, Stack, Text, TextLink } from '@/components'
 import { dbClient } from '@/lib/db'
-
 export default async function Home() {
   const posts = await dbClient.post.findMany({
     where: {
@@ -13,9 +12,14 @@ export default async function Home() {
 
   return (
     <main>
-      <Heading as="h1" size="2xl">
-        Coquito.io
-      </Heading>
+      <Stack>
+        <LogoLink>
+          <LogoIcon />
+        </LogoLink>
+        <Heading as="h1" size="2xl">
+          Coquito.io
+        </Heading>
+      </Stack>
       <div>
         {posts.map((post) => (
           <Text key={post.id}>

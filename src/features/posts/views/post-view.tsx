@@ -4,7 +4,7 @@ import { generateHTML } from '@tiptap/html'
 import StarterKit from '@tiptap/starter-kit'
 import { useMemo } from 'react'
 
-import { Container, Content, Heading, Prose, Stack } from '@/components'
+import { Container, Content, Heading, LogoIcon, LogoLink, Prose, Stack } from '@/components'
 
 interface PostViewProps {
   post: {
@@ -21,6 +21,9 @@ export function PostView({ post }: PostViewProps) {
   return (
     <Container maxWidth="prose">
       <Stack as="article">
+        <LogoLink>
+          <LogoIcon />
+        </LogoLink>
         <Heading as="h1" textAlign="center" size="3xl">
           {post.title}
         </Heading>
