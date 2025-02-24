@@ -92,9 +92,6 @@ importers:
       '@premieroctet/next-admin-generator-prisma':
         specifier: ^0.0.3
         version: 0.0.3(@premieroctet/next-admin@7.3.0(@prisma/client@6.4.1(prisma@6.4.1(typescript@5.7.3))(typescript@5.7.3))(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(monaco-editor@0.52.2)(next@15.1.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(prisma@6.4.1(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tailwindcss@3.4.17)(typescript@5.7.3))
-      '@types/highlight.js':
-        specifier: ^10.1.0
-        version: 10.1.0
       '@types/node':
         specifier: ^20
         version: 20.17.19
@@ -1719,11 +1716,6 @@ packages:
   '@types/formidable@3.4.5':
     resolution:
       { integrity: sha512-s7YPsNVfnsng5L8sKnG/Gbb2tiwwJTY1conOkJzTMRvJAlLFW1nEua+ADsJQu8N1c0oTHx9+d5nqg10WuT9gHQ== }
-
-  '@types/highlight.js@10.1.0':
-    resolution:
-      { integrity: sha512-77hF2dGBsOgnvZll1vymYiNUtqJ8cJfXPD6GG/2M0aLRc29PkvB7Au6sIDjIEFcSICBhCh2+Pyq6WSRS7LUm6A== }
-    deprecated: This is a stub types definition. highlight.js provides its own type definitions, so you do not need this installed.
 
   '@types/is-hotkey@0.1.10':
     resolution:
@@ -6741,10 +6733,6 @@ snapshots:
   '@types/formidable@3.4.5':
     dependencies:
       '@types/node': 20.17.19
-
-  '@types/highlight.js@10.1.0':
-    dependencies:
-      highlight.js: 11.11.1
 
   '@types/is-hotkey@0.1.10':
     optional: true
