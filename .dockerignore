@@ -1,7 +1,7 @@
 
 # Folders
 .next/
-.sst/
+.sst
 node_modules/
 
 # Files

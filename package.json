@@ -15,7 +15,7 @@
     "lint": "pnpm lint:prisma && pnpm lint:ts",
     "lint:prisma": "prisma-lint prisma/schema/",
     "lint:ts": "eslint --cache",
-    "prepare": "husky",
+    "prepare": "./.husky/install.mjs",
     "start": "next start"
   },
   "dependencies": {
