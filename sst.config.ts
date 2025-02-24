@@ -12,7 +12,9 @@ export default $config({
   },
   async run() {
     // Setup networking
-    const vpc = new sst.aws.Vpc('CoquitoVpc')
+    const vpc = new sst.aws.Vpc('CoquitoVpc', {
+      bastion: true,
+    })
 
     // Setup database
     const postgres = new sst.aws.Postgres('CoquitoPostgres', {
@@ -28,6 +30,14 @@ export default $config({
       },
     })
     const DATABASE_URL = $interpolate`postgresql://${postgres.username}:${postgres.password}@${postgres.host}:${postgres.port}/${postgres.database}`
+
+    // Commands
+    new sst.x.DevCommand('Database', {
+      environment: { DATABASE_URL },
+      dev: {
+        autostart: false,
+      },
+    })
 
     // Setup service for the app
     const cluster = new sst.aws.Cluster('CoquitoCluster', { vpc })
