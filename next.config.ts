@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['@chakra-ui/react', '@emotion/react', 'next-themes', 'react-icons'],
     typedRoutes: true,
   },
+  output: 'standalone',
 }
 
 export default nextConfig
