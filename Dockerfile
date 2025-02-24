@@ -8,15 +8,11 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
-COPY sst-env.d.ts* ./
-COPY .husky/ ./.husky/
 RUN pnpm install --frozen-lockfile --prod=false
 
 # Build ------------------------------------------------------------
 FROM base AS build
-ARG SST_RESOURCE_CoquitoPostgres
 ENV NODE_ENV=production
-ENV DATABASE_URL=$DATABASE_URL
 
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules

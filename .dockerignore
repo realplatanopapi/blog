@@ -1,0 +1,16 @@
+# Folders
+.git/
+.github/
+.husky/
+.next/
+logo/
+node_modules/
+
+# Files
+.env
+.eslintcache
+.lintstagedrc.json
+.prettierrc.json
+README.md
+eslint.config.mjs
+next-env.d.ts

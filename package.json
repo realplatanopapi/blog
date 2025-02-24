@@ -16,7 +16,7 @@
     "lint": "pnpm lint:prisma && pnpm lint:ts",
     "lint:prisma": "prisma-lint prisma/schema/",
     "lint:ts": "eslint --cache",
-    "prepare": "is-in-ci || ./.husky/install.mjs"
+    "prepare": "is-in-ci || husky"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.8.1",
