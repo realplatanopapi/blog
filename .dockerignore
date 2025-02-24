@@ -1,14 +1,9 @@
+
 # Folders
 .next/
 .sst/
 node_modules/
 
 # Files
-.DS_Store
-.env*
 .eslintcache
 next-env.d.ts
-sst-env.d.ts
-
-# Overrides
-.env

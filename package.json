@@ -1,22 +1,22 @@
 {
   "name": "blog",
-  "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.4.1",
   "scripts": {
+    "build": "pnpm db:generate && next build",
     "chakra": "chakra",
     "db:generate": "pnpm lint:prisma && prisma generate --no-hints",
     "db:migrate": "pnpm lint:prisma && prisma migrate dev",
     "db:studio": "pnpm lint:prisma && prisma studio",
     "dev": "concurrently -k -c 'cyan,magenta,gray' -n 'app,theme,docker' 'pnpm dev:app' 'pnpm dev:theme' 'pnpm dev:docker'",
     "dev:app": "next dev",
-    "dev:theme": "chakra typegen ./src/theme/system.ts --watch",
     "dev:docker": "docker compose up",
-    "build": "pnpm db:generate && next build",
-    "start": "next start",
+    "dev:theme": "chakra typegen ./src/theme/system.ts --watch",
     "lint": "pnpm lint:prisma && pnpm lint:ts",
     "lint:prisma": "prisma-lint prisma/schema/",
     "lint:ts": "eslint --cache",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "next start"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.8.1",
@@ -40,7 +40,7 @@
     "react-dom": "^19.0.0",
     "react-highlight": "^0.15.0",
     "react-icons": "^5.5.0",
-    "sst": "^3.9.10",
+    "sst": "3.9.10",
     "ts-pattern": "^5.6.2"
   },
   "devDependencies": {
