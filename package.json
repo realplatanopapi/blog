@@ -11,7 +11,7 @@
     "dev:app": "next dev",
     "dev:theme": "chakra typegen ./src/theme/system.ts --watch",
     "dev:docker": "docker compose up",
-    "build": "next build",
+    "build": "pnpm db:generate && next build",
     "start": "next start",
     "lint": "pnpm lint:prisma && pnpm lint:ts",
     "lint:prisma": "prisma-lint prisma/schema/",
