@@ -46,6 +46,7 @@
   "devDependencies": {
     "@chakra-ui/cli": "^3.8.1",
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.1.7",
     "@next/eslint-plugin-next": "^15.1.7",
     "@premieroctet/next-admin-generator-prisma": "^0.0.3",
     "@types/highlight.js": "^10.1.0",
