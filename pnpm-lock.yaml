@@ -46,6 +46,9 @@ importers:
       highlight.js:
         specifier: ^11.11.1
         version: 11.11.1
+      is-in-ci:
+        specifier: ^1.0.0
+        version: 1.0.0
       next:
         specifier: 15.1.7
         version: 15.1.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -3393,6 +3396,12 @@ packages:
   is-hotkey@0.2.0:
     resolution:
       { integrity: sha512-UknnZK4RakDmTgz4PI1wIph5yxSs/mvChWs9ifnlXsKuXgWmOkY/hAE0H/k2MIqH0RlRye0i1oC07MCRSD28Mw== }
+
+  is-in-ci@1.0.0:
+    resolution:
+      { integrity: sha512-eUuAjybVTHMYWm/U+vBO1sY/JOCgoPCXRxzdju0K+K0BiGW0SChEL1MLC0PoCIR1OlPo5YAp8HuQoUlsWEICwg== }
+    engines: { node: '>=18' }
+    hasBin: true
 
   is-map@2.0.3:
     resolution:
@@ -8412,6 +8421,8 @@ snapshots:
 
   is-hotkey@0.2.0:
     optional: true
+
+  is-in-ci@1.0.0: {}
 
   is-map@2.0.3: {}
 

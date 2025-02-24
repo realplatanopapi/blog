@@ -16,7 +16,7 @@
     "lint": "pnpm lint:prisma && pnpm lint:ts",
     "lint:prisma": "prisma-lint prisma/schema/",
     "lint:ts": "eslint --cache",
-    "prepare": "husky"
+    "prepare": "is-in-ci || ./.husky/install.mjs"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.8.1",
@@ -32,6 +32,7 @@
     "@tiptap/starter-kit": "^2.11.5",
     "envalid": "^8.0.0",
     "highlight.js": "^11.11.1",
+    "is-in-ci": "^1.0.0",
     "next": "15.1.7",
     "next-themes": "^0.4.4",
     "prisma": "^6.4.1",
