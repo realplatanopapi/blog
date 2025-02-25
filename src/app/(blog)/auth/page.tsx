@@ -24,7 +24,7 @@ export default async function AuthPage() {
             <Input autoFocus type="text" name="username" placeholder="cooltown" required />
           </Field>
           <Field>
-            <Input autoFocus type="password" name="password" required />
+            <Input autoFocus type="password" name="password" placeholder="••••••••" required />
           </Field>
           <Button type="submit">Login</Button>
         </form>
