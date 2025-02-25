@@ -15,6 +15,10 @@ primary_region = 'ord'
   processes = ['app']
 
 [[statics]]
+  guest_path = "/app/.next/static"
+  url_prefix = "/_next/static"
+
+[[statics]]
   guest_path = "/app/public"
   url_prefix = "/"
 
