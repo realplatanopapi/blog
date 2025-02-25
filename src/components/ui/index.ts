@@ -1,5 +1,6 @@
 export * from './color-mode'
 export * from './dialog'
+export * from './field'
 export * from './link-overlay'
 export * from './logo'
 export * from './prose'
