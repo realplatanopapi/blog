@@ -1,5 +1,12 @@
 @import 'highlight.js/styles/github-dark.min.css';
 
+pre {
+  color: #c9d1d9;
+  background: #0d1117;
+}
+
 pre code.hljs {
+  background-color: inherit;
+  color: inherit;
   padding: 0;
 }
