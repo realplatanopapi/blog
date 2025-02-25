@@ -14,7 +14,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className={cx(fontBody.variable, fontMono.variable)} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcuticon" href="/favicon.ico" />
       </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
