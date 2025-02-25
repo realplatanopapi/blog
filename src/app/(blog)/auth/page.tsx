@@ -1,7 +1,15 @@
+import { redirect, RedirectType } from 'next/navigation'
+
 import { Button, Field, Heading, Input, LogoIcon, LogoLink, Stack } from '@/components'
 import { authenticate } from '@/lib/auth/authenticate'
+import { authorize } from '@/lib/auth/authorize'
 
-export default function AuthPage() {
+export default async function AuthPage() {
+  const authorized = await authorize()
+  if (authorized) {
+    return redirect('/admin', RedirectType.replace)
+  }
+
   return (
     <Stack gap={6}>
       <LogoLink>
