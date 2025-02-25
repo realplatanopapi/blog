@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 import { Content } from '@/components/editor/types'
 import { PostView } from '@/features/posts/views/post-view'
@@ -26,12 +27,17 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params
 
-  const post = await dbClient.post.findFirstOrThrow({
+  const post = await dbClient.post.findFirst({
     where: {
       slug,
       published: true,
     },
   })
+
+  if (!post) {
+    console.log('not found')
+    notFound()
+  }
 
   return (
     <PostView

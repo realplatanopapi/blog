@@ -11,7 +11,7 @@ export function PostPreviewLink({ post, ...props }: PostPreviewLinkProps) {
       <Stack>
         <LinkOverlay
           href={{
-            pathname: `/p/${post.slug}`,
+            pathname: `/${post.slug}`,
           }}
         >
           <Text
