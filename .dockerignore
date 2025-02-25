@@ -13,4 +13,5 @@ node_modules/
 .prettierrc.json
 README.md
 eslint.config.mjs
+fly.toml
 next-env.d.ts
