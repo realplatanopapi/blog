@@ -52,7 +52,6 @@
     "@next/bundle-analyzer": "^15.1.7",
     "@next/eslint-plugin-next": "^15.1.7",
     "@premieroctet/next-admin-generator-prisma": "^0.0.3",
-    "@types/highlight.js": "^10.1.0",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20",
     "@types/react": "^19",
