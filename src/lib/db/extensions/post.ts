@@ -28,7 +28,6 @@ export const postExtension = Prisma.defineExtension({
         })
       },
       async update({ args, query }) {
-        console.log('AHHHHH', args)
         const title = args.data.title
         if (typeof title !== 'string') {
           return query(args)
