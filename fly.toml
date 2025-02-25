@@ -14,6 +14,10 @@ primary_region = 'ord'
   min_machines_running = 1
   processes = ['app']
 
+[[statics]]
+  guest_path = "/app/public"
+  url_prefix = "/"
+
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
