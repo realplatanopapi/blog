@@ -17,7 +17,7 @@ export function LandingView({ posts }: LandingViewProps) {
           coquito.io
         </Heading>
       </Stack>
-      <Text color="fg.muted" fontSize="lg" textAlign="center" mx="auto" maxWidth="30ch">
+      <Text color="fg.muted" textAlign="center" mx="auto" maxWidth="40ch">
         Posts about the human side of software engineering. By{' '}
         <TextLink href="https://bsky.app/profile/realplatanopapi.net" target="_blank">
           @realplatanopapi
