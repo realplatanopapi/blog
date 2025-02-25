@@ -40,6 +40,9 @@ importers:
       '@tiptap/starter-kit':
         specifier: ^2.11.5
         version: 2.11.5
+      classix:
+        specifier: ^2.2.2
+        version: 2.2.2
       envalid:
         specifier: ^8.0.0
         version: 8.0.0
@@ -2389,6 +2392,10 @@ packages:
   class-variance-authority@0.6.1:
     resolution:
       { integrity: sha512-eurOEGc7YVx3majOrOb099PNKgO3KnKSApOprXI4BTq6bcfbqbQXPN2u+rPPmIJ2di23bMwhk0SxCCthBmszEQ== }
+
+  classix@2.2.2:
+    resolution:
+      { integrity: sha512-sHfNzza/LoiecpfDAjnVyan2SG4Q9fhcO0TrbnjK7nh5rvA9E9k/kFk4WGHdI24upUyzSBSxq+uy4oUPR9Mgig== }
 
   clean-regexp@1.0.0:
     resolution:
@@ -7466,6 +7473,8 @@ snapshots:
   class-variance-authority@0.6.1:
     dependencies:
       clsx: 1.2.1
+
+  classix@2.2.2: {}
 
   clean-regexp@1.0.0:
     dependencies:
