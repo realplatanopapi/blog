@@ -18,9 +18,16 @@ export function TableOfContents(_props: TableOfContentsProps) {
 
     const headings = document.querySelectorAll('h2')
     headings.forEach((heading) => {
-      heading.id = heading.innerText.toLowerCase().replace(/ /g, '-')
+      heading.id = heading.innerText.toLowerCase().replace(/\W/g, '-')
     })
     setHeadings(Array.from(headings))
+
+    if (window.location.hash) {
+      const headingElement = document.getElementById(stripLeadingHash(window.location.hash))
+      if (headingElement) {
+        scrollToElement(headingElement)
+      }
+    }
   }, [])
 
   const handleClick: React.HTMLAttributes<HTMLAnchorElement>['onClick'] = (event) => {
@@ -28,15 +35,12 @@ export function TableOfContents(_props: TableOfContentsProps) {
     const href = target.getAttribute('href')
     if (!href) return
 
-    const headingId = href.replace('#', '')
+    const headingId = stripLeadingHash(href)
     const headingElement = document.getElementById(headingId)
 
     if (headingElement) {
       event.preventDefault()
-      window.scrollTo({
-        top: headingElement.offsetTop - 100,
-        behavior: 'smooth',
-      })
+      scrollToElement(headingElement)
     }
   }
 
@@ -74,4 +78,12 @@ export function TableOfContents(_props: TableOfContentsProps) {
       )}
     </AnimatePresence>
   )
+}
+
+function scrollToElement(element: HTMLElement) {
+  window.scrollTo({ top: element.offsetTop - 100, behavior: 'smooth' })
+}
+
+function stripLeadingHash(id: string) {
+  return id.replace(/^#/, '')
 }
