@@ -3,7 +3,6 @@
 import { AnimatePresence, motion } from 'motion/react'
 import React, { useCallback, useEffect, useState } from 'react'
 import { LuArrowUpWideNarrow } from 'react-icons/lu'
-import { useDebounceCallback } from 'usehooks-ts'
 
 import { Box, Icon, Stack, Text, TextLink, TextLinkProps } from '@/components'
 
@@ -67,16 +66,14 @@ export function TableOfContents(_props: TableOfContentsProps) {
     }
   }, [subheadings, activeSubheading])
 
-  const detectActiveHeadingDebounced = useDebounceCallback(detectActiveHeading, 50)
-
   useEffect(() => {
-    detectActiveHeadingDebounced()
-    window.addEventListener('scroll', detectActiveHeadingDebounced)
+    detectActiveHeading()
+    window.addEventListener('scroll', detectActiveHeading)
 
     return () => {
-      window.removeEventListener('scroll', detectActiveHeadingDebounced)
+      window.removeEventListener('scroll', detectActiveHeading)
     }
-  }, [detectActiveHeadingDebounced])
+  }, [detectActiveHeading])
 
   return (
     <Box as="aside" position="fixed" left={5} top="50%" transform="translateY(-50%)">
