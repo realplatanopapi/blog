@@ -22,7 +22,7 @@ export function PostView({ post }: PostViewProps) {
       </LogoLink>
       <TableOfContents />
       <Stack as="article" gap={4}>
-        <Stack gap={1}>
+        <Stack gap={2}>
           <Text textAlign="center" fontSize="sm" color="fg.subtle">
             {post.publishedAt.toLocaleDateString('en-US', {
               year: 'numeric',
@@ -33,12 +33,12 @@ export function PostView({ post }: PostViewProps) {
           <Heading as="h1" textAlign="center" size="3xl">
             {post.title}
           </Heading>
+          {!isEmpty(post.subtitle) && (
+            <Text color="fg.muted" textAlign="center" mx="auto">
+              {post.subtitle}
+            </Text>
+          )}
         </Stack>
-        {!isEmpty(post.subtitle) && (
-          <Text color="fg.muted" textAlign="center" mx="auto" maxWidth="40ch">
-            {post.subtitle}
-          </Text>
-        )}
         <PostRenderer content={post.content as Content} />
       </Stack>
       <Stack py={4} borderTop="1px" borderTopColor="border.subtle" borderTopStyle="solid">
