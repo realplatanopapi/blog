@@ -81,58 +81,59 @@ export function TableOfContents(_props: TableOfContentsProps) {
   if (!subheadings.length) return null
 
   return (
-    <AnimatePresence>
-      {subheadings.length > 0 && (
-        <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.2 }}>
-          <Box
-            hideBelow="xl"
-            bg="bg.subtle"
-            borderStyle="solid"
-            borderColor="border.muted"
-            borderWidth={1}
-            borderRadius="sm"
-            fontSize="xs"
-            ml={5}
-            width="35ch"
-            padding={5}
-          >
-            <Stack gap={5}>
-              <TextLink href="#top" color="fg.muted" variant="plain" onClick={handleClick}>
-                <Icon>
-                  <LuArrowUpWideNarrow />
-                </Icon>
-                <Text as="span" fontWeight="medium" truncate>
-                  {heading?.innerText ?? 'Table of contents'}
-                </Text>
-              </TextLink>
-              {subheadings.map((heading) => {
-                const isActive = activeSubheading?.id === heading.id
-                console.log({ isActive, activeSubheading, heading })
+    <Box as="aside" position="fixed" left={5} top="50%" transform="translateY(-50%)">
+      <AnimatePresence>
+        {subheadings.length > 0 && (
+          <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.2 }}>
+            <Box
+              hideBelow="xl"
+              bg="bg.subtle"
+              borderStyle="solid"
+              borderColor="border.muted"
+              borderWidth={1}
+              borderRadius="sm"
+              fontSize="xs"
+              width="35ch"
+              padding={5}
+            >
+              <Stack gap={5}>
+                <TextLink href="#top" color="fg.muted" variant="plain" onClick={handleClick}>
+                  <Icon>
+                    <LuArrowUpWideNarrow />
+                  </Icon>
+                  <Text as="span" fontWeight="medium" truncate>
+                    {heading?.innerText ?? 'Table of contents'}
+                  </Text>
+                </TextLink>
+                {subheadings.map((heading) => {
+                  const isActive = activeSubheading?.id === heading.id
+                  console.log({ isActive, activeSubheading, heading })
 
-                return (
-                  <TableOfContentsLink
-                    leftIcon={
-                      <Box
-                        as="span"
-                        boxSize="0.5em"
-                        flexShrink={0}
-                        display={isActive ? 'block' : 'none'}
-                        bg="brand.cocoGreen"
-                        borderRadius="full"
-                      />
-                    }
-                    hash={heading.id}
-                    key={heading.id}
-                  >
-                    {heading.innerText}
-                  </TableOfContentsLink>
-                )
-              })}
-            </Stack>
-          </Box>
-        </motion.div>
-      )}
-    </AnimatePresence>
+                  return (
+                    <TableOfContentsLink
+                      leftIcon={
+                        <Box
+                          as="span"
+                          boxSize="0.5em"
+                          flexShrink={0}
+                          display={isActive ? 'block' : 'none'}
+                          bg="brand.cocoGreen"
+                          borderRadius="full"
+                        />
+                      }
+                      hash={heading.id}
+                      key={heading.id}
+                    >
+                      {heading.innerText}
+                    </TableOfContentsLink>
+                  )
+                })}
+              </Stack>
+            </Box>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </Box>
   )
 }
 

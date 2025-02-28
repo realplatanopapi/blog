@@ -16,9 +16,7 @@ export function PostView({ post }: PostViewProps) {
       <LogoLink>
         <LogoIcon />
       </LogoLink>
-      <Stack as="aside" position="fixed" left={0} top="50vh" transform="translateY(-50%)">
-        <TableOfContents />
-      </Stack>
+      <TableOfContents />
       <Stack as="article" gap={4}>
         <Heading as="h1" textAlign="center" size="3xl">
           {post.title}
