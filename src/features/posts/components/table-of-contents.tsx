@@ -48,6 +48,13 @@ export function TableOfContents(_props: TableOfContentsProps) {
       const heading = subheadings[i]
       const headingRect = heading.getBoundingClientRect()
 
+      // Handle the last heading being too close to the bottom of the page
+      if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
+        // Always set the last heading as the active heading if we've scrolled to the bottom of the page
+        candidate = subheadings[subheadings.length - 1]
+        break
+      }
+
       // If heading position is less than or equal to 50% of the viewport height, set it as the active heading
       if (headingRect.top <= window.innerHeight / 2) {
         candidate = heading
