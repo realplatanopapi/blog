@@ -36,6 +36,7 @@ export function PostView({ post }: PostViewProps) {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
+              timeZone: 'UTC',
             })}
           </Text>
         </Stack>
