@@ -70,6 +70,7 @@ export function TableOfContents(_props: TableOfContentsProps) {
   const detectActiveHeadingDebounced = useDebounceCallback(detectActiveHeading, 50)
 
   useEffect(() => {
+    detectActiveHeadingDebounced()
     window.addEventListener('scroll', detectActiveHeadingDebounced)
 
     return () => {
