@@ -10,7 +10,7 @@ const { run } = createHandler({
   prisma: dbClient as unknown as PlainDBClient,
   onRequest: async () => {
     const session = await authorize()
-    if (session) {
+    if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
   },
