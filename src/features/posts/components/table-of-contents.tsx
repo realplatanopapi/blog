@@ -7,6 +7,8 @@ import { useDebounceCallback } from 'usehooks-ts'
 
 import { Box, Icon, Stack, Text, TextLink, TextLinkProps } from '@/components'
 
+const TITLE_ELEMENT_ID = 'top'
+
 interface TableOfContentsProps {}
 
 export function TableOfContents(_props: TableOfContentsProps) {
@@ -15,9 +17,12 @@ export function TableOfContents(_props: TableOfContentsProps) {
   const [activeSubheading, setActiveSubheading] = useState<HTMLElement | null>(null)
 
   useEffect(() => {
+    /**
+     * Assign ids to headings
+     */
     const title = document.querySelector('h1')
     if (title) {
-      title.id = 'top'
+      title.id = TITLE_ELEMENT_ID
       setHeading(title)
     }
 
@@ -42,6 +47,7 @@ export function TableOfContents(_props: TableOfContentsProps) {
     for (let i = index; i >= 0; i--) {
       const heading = subheadings[i]
       const headingRect = heading.getBoundingClientRect()
+
       // If heading position is less than or equal to 50% of the viewport height, set it as the active heading
       if (headingRect.top <= window.innerHeight / 2) {
         candidate = heading
@@ -64,22 +70,6 @@ export function TableOfContents(_props: TableOfContentsProps) {
     }
   }, [detectActiveHeadingDebounced])
 
-  const handleClick: React.HTMLAttributes<HTMLAnchorElement>['onClick'] = (event) => {
-    const target = event.currentTarget
-    const href = target.getAttribute('href')
-    if (!href) return
-
-    const headingId = stripLeadingHash(href)
-    const headingElement = document.getElementById(headingId)
-
-    if (headingElement) {
-      event.preventDefault()
-      scrollToElement(headingElement)
-    }
-  }
-
-  if (!subheadings.length) return null
-
   return (
     <Box as="aside" position="fixed" left={5} top="50%" transform="translateY(-50%)">
       <AnimatePresence>
@@ -97,14 +87,18 @@ export function TableOfContents(_props: TableOfContentsProps) {
               padding={5}
             >
               <Stack gap={5}>
-                <TextLink href="#top" color="fg.muted" variant="plain" onClick={handleClick}>
-                  <Icon>
-                    <LuArrowUpWideNarrow />
-                  </Icon>
-                  <Text as="span" fontWeight="medium" truncate>
-                    {heading?.innerText ?? 'Table of contents'}
-                  </Text>
-                </TextLink>
+                <TableOfContentsLink
+                  color="fg.muted"
+                  leftIcon={
+                    <Icon>
+                      <LuArrowUpWideNarrow />
+                    </Icon>
+                  }
+                  hash={TITLE_ELEMENT_ID}
+                >
+                  {heading?.innerText ?? 'Table of contents'}
+                </TableOfContentsLink>
+
                 {subheadings.map((heading) => {
                   const isActive = activeSubheading?.id === heading.id
                   console.log({ isActive, activeSubheading, heading })
