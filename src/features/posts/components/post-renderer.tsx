@@ -18,7 +18,7 @@ export function PostRenderer({ content }: PostRendererProps) {
 
   return (
     <>
-      <Prose className="post-renderer" dangerouslySetInnerHTML={{ __html: html }} />
+      <Prose dangerouslySetInnerHTML={{ __html: html }} />
       <HighlightCodeLazy />
     </>
   )

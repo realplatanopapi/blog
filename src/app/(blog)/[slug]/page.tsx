@@ -42,6 +42,7 @@ export default async function PostPage({ params }: PostPageProps) {
     <PostView
       post={{
         title: post.title,
+        subtitle: post.subtitle,
         content: post.content as Content,
       }}
     />
