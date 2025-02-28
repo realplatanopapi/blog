@@ -44,6 +44,7 @@ export default async function PostPage({ params }: PostPageProps) {
         title: post.title,
         subtitle: post.subtitle,
         content: post.content as Content,
+        publishedAt: post.createdAt,
       }}
     />
   )

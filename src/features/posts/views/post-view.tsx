@@ -10,6 +10,7 @@ interface PostViewProps {
     title: string
     subtitle: string | null
     content: Content
+    publishedAt: Date
   }
 }
 
@@ -21,11 +22,20 @@ export function PostView({ post }: PostViewProps) {
       </LogoLink>
       <TableOfContents />
       <Stack as="article" gap={4}>
-        <Heading as="h1" textAlign="center" size="3xl">
-          {post.title}
-        </Heading>
+        <Stack gap={1}>
+          <Text textAlign="center" fontSize="sm" color="fg.subtle">
+            {post.publishedAt.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </Text>
+          <Heading as="h1" textAlign="center" size="3xl">
+            {post.title}
+          </Heading>
+        </Stack>
         {!isEmpty(post.subtitle) && (
-          <Text textAlign="center" color="fg.muted">
+          <Text color="fg.muted" textAlign="center" mx="auto" maxWidth="40ch">
             {post.subtitle}
           </Text>
         )}
