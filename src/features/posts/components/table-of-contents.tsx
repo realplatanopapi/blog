@@ -1,5 +1,6 @@
 'use client'
 
+import { AnimatePresence, motion } from 'motion/react'
 import React, { useEffect, useState } from 'react'
 
 import { Box, Stack, Text, TextLink } from '@/components'
@@ -39,30 +40,38 @@ export function TableOfContents(_props: TableOfContentsProps) {
     }
   }
 
+  if (!headings.length) return null
+
   return (
-    <Box
-      bg="bg.subtle"
-      borderStyle="solid"
-      borderColor="border.muted"
-      borderWidth={1}
-      borderRadius="sm"
-      fontSize="sm"
-      ml={5}
-      width="25ch"
-      padding={5}
-    >
-      <Stack gap={5}>
-        <TextLink href="#top" fontSize="sm" color="fg.muted" variant="plain" onClick={handleClick}>
-          Table of Contents
-        </TextLink>
-        {headings.map((heading) => (
-          <TextLink key={heading.id} href={`#${heading.id}`} fontSize="xs" variant="plain" onClick={handleClick}>
-            <Text as="span" truncate>
-              {heading.innerText}
-            </Text>
-          </TextLink>
-        ))}
-      </Stack>
-    </Box>
+    <AnimatePresence>
+      {headings.length > 0 && (
+        <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.2 }}>
+          <Box
+            bg="bg.subtle"
+            borderStyle="solid"
+            borderColor="border.muted"
+            borderWidth={1}
+            borderRadius="sm"
+            fontSize="sm"
+            ml={5}
+            width="25ch"
+            padding={5}
+          >
+            <Stack gap={5}>
+              <TextLink href="#top" fontSize="sm" color="fg.muted" variant="plain" onClick={handleClick}>
+                Table of contents
+              </TextLink>
+              {headings.map((heading) => (
+                <TextLink key={heading.id} href={`#${heading.id}`} fontSize="xs" variant="plain" onClick={handleClick}>
+                  <Text as="span" truncate>
+                    {heading.innerText}
+                  </Text>
+                </TextLink>
+              ))}
+            </Stack>
+          </Box>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
