@@ -36,6 +36,7 @@ const eslintConfig = [
           caughtErrorsIgnorePattern: '^_',
         },
       ],
+      'no-console': ['error', { allow: ['warn', 'error'] }],
       'no-relative-import-paths/no-relative-import-paths': [
         'error',
         {

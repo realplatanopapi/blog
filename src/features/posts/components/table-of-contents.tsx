@@ -101,7 +101,6 @@ export function TableOfContents(_props: TableOfContentsProps) {
 
                 {subheadings.map((heading) => {
                   const isActive = activeSubheading?.id === heading.id
-                  console.log({ isActive, activeSubheading, heading })
 
                   return (
                     <TableOfContentsLink
