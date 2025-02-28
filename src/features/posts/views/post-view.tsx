@@ -23,13 +23,6 @@ export function PostView({ post }: PostViewProps) {
       <TableOfContents />
       <Stack as="article" gap={4}>
         <Stack gap={2}>
-          <Text textAlign="center" fontSize="sm" color="fg.subtle">
-            {post.publishedAt.toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </Text>
           <Heading as="h1" textAlign="center" size="3xl">
             {post.title}
           </Heading>
@@ -38,6 +31,13 @@ export function PostView({ post }: PostViewProps) {
               {post.subtitle}
             </Text>
           )}
+          <Text textAlign="center" fontSize="sm" color="fg.subtle">
+            {post.publishedAt.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </Text>
         </Stack>
         <PostRenderer content={post.content as Content} />
       </Stack>
