@@ -1,5 +1,3 @@
-'use client'
-
 import { LuMoonStar, LuSun } from 'react-icons/lu'
 import { match } from 'ts-pattern'
 
