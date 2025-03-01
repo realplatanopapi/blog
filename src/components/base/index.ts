@@ -5,6 +5,7 @@ export {
   Flex,
   Heading,
   Icon,
+  IconButton,
   Image,
   Input,
   Stack,
