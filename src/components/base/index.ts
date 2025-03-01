@@ -1,11 +1,13 @@
 export {
   Box,
+  type BoxProps,
   Button,
   Container,
   Flex,
   Heading,
   Icon,
   IconButton,
+  type IconButtonProps,
   Image,
   Input,
   Stack,

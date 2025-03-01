@@ -2,11 +2,21 @@
 
 import { cookies as getCookies } from 'next/headers'
 
-import { appearanceCookieName } from '@/features/appearance/constants'
+import { appearanceCookieName, AppearanceValue, appearanceValue } from '@/features/appearance/constants'
 
-const initial = 'dark'
+const initial: AppearanceValue = appearanceValue.dark
 
-export async function getAppearancePreference() {
+export async function getAppearancePreference(): Promise<AppearanceValue> {
   const cookies = await getCookies()
-  return cookies.get(appearanceCookieName)?.value ?? initial
+
+  const value = cookies.get(appearanceCookieName)?.value
+  if (value === appearanceValue.dark) {
+    return appearanceValue.dark
+  }
+
+  if (value === appearanceValue.light) {
+    return appearanceValue.light
+  }
+
+  return initial
 }

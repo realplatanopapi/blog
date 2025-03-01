@@ -1,8 +1,12 @@
 import { PropsWithChildren } from 'react'
 
-import { Container, Flex, Text, TextLink } from '@/components'
+import { Container, Flex, TextLink } from '@/components'
+import { AppearanceForm, AppearanceToggleButton } from '@/features/appearance/components'
+import { getAppearancePreference } from '@/features/appearance/server'
 
-export function BlogShell({ children }: PropsWithChildren) {
+export async function BlogShell({ children }: PropsWithChildren) {
+  const appearance = await getAppearancePreference()
+
   return (
     <Container
       as="main"
@@ -17,20 +21,21 @@ export function BlogShell({ children }: PropsWithChildren) {
         {children}
       </Flex>
       <Flex flex="0 0 auto" justifyContent="space-between" pt={8}>
-        <Text color="fg.muted" fontSize="sm">
+        <AppearanceForm>
+          <AppearanceToggleButton initial={appearance} />
+        </AppearanceForm>
+        <Flex gap={2}>
           <TextLink
-            color="inherit"
+            color="fg.muted"
+            fontSize="sm"
             href={{
               pathname: '/',
             }}
             variant="plain"
           >
-            coquito.io
-          </TextLink>{' '}
-        </Text>
-        <Text color="fg.muted" fontSize="sm">
-          © {new Date().getFullYear()}
-        </Text>
+            coquito.io © {new Date().getFullYear()}
+          </TextLink>
+        </Flex>
       </Flex>
     </Container>
   )
