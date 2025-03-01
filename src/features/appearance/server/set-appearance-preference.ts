@@ -11,5 +11,5 @@ export async function setAppearancePreference(formData: FormData) {
   const cookieStore = await getCookies()
   cookieStore.set(appearanceCookieName, preference)
 
-  await revalidatePath('/')
+  revalidatePath('/')
 }
