@@ -1,10 +1,11 @@
 'use client'
 
-import { chakra, LinkProps } from '@chakra-ui/react'
-import NextLink, { LinkProps as NextLinkProps } from 'next/link'
+import { chakra } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import React from 'react'
 
 import { linkRecipe } from '@/theme/recipes/link'
 
-export type TextLinkProps<RouteType> = LinkProps & NextLinkProps<RouteType>
-
 export const TextLink = chakra(NextLink, linkRecipe)
+
+export type TextLinkProps = React.ComponentProps<typeof TextLink>

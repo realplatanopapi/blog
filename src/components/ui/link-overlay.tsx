@@ -8,9 +8,9 @@ import { PropsWithChildren } from 'react'
 import { BareLink, BareLinkProps } from '@/components/base'
 
 export type LinkBoxProps = ChakraLinkBoxProps
-export interface LinkOverlayProps<TRouteType> extends BareLinkProps<TRouteType> {}
+export interface LinkOverlayProps extends BareLinkProps {}
 
-export function LinkOverlay<TRouteType>({ children, ...props }: PropsWithChildren<LinkOverlayProps<TRouteType>>) {
+export function LinkOverlay({ children, ...props }: PropsWithChildren<LinkOverlayProps>) {
   return (
     <ChakraLinkOverlay asChild>
       <BareLink {...props}>{children}</BareLink>

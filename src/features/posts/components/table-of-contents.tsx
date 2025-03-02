@@ -135,13 +135,14 @@ export function TableOfContents(_props: TableOfContentsProps) {
   )
 }
 
-interface TableOfContentsLinkProps<RouteType> extends Omit<TextLinkProps<RouteType>, 'as' | 'children' | 'href'> {
+interface TableOfContentsLinkProps {
+  color?: TextLinkProps['color']
   leftIcon?: React.ReactNode
   children: string
   hash: string
 }
 
-function TableOfContentsLink<RouteType>({ children, hash, leftIcon, ...props }: TableOfContentsLinkProps<RouteType>) {
+function TableOfContentsLink({ children, hash, leftIcon, ...props }: TableOfContentsLinkProps) {
   const handleClick: React.HTMLAttributes<HTMLAnchorElement>['onClick'] = (event) => {
     const hashTarget = document.getElementById(hash)
     if (hashTarget) {
