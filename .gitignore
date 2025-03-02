@@ -3,6 +3,7 @@
 node_modules/
 
 # Files
+*.tsbuildinfo
 .DS_Store
 .env*
 .eslintcache
