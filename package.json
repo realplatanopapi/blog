@@ -4,12 +4,13 @@
   "packageManager": "pnpm@10.4.1",
   "scripts": {
     "chakra": "chakra",
+    "codegen": "pnpm theme:generate && pnpm db:generate",
     "db:generate": "pnpm lint:prisma && prisma generate --no-hints",
     "db:migrate": "pnpm lint:prisma && prisma migrate dev",
     "db:studio": "pnpm lint:prisma && prisma studio",
     "dev": "concurrently -k -c 'cyan,magenta,gray' -n 'app,theme,docker' 'pnpm dev:app' 'pnpm dev:theme' 'pnpm dev:docker'",
     "dev:app": "next dev",
-    "dev:theme": "chakra typegen ./src/theme/system.ts --watch",
+    "dev:theme": "pnpm theme:generate --watch",
     "dev:docker": "docker compose up",
     "build": "pnpm db:generate && next build",
     "start": "next start",
@@ -17,6 +18,7 @@
     "lint:prisma": "prisma-lint prisma/schema/",
     "lint:ts": "eslint --cache",
     "prepare": "is-in-ci || husky",
+    "theme:generate": "chakra typegen ./src/theme/system.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

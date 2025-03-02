@@ -38,6 +38,9 @@ jobs:
       - name: install
         run: pnpm install --frozen-lockfile
 
+      - name: codegen
+        run: pnpm db:generate
+
       - name: lint
         run: pnpm lint --quiet
 
