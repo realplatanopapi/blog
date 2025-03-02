@@ -1,7 +1,7 @@
 {
   "name": "blog",
-  "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.4.1",
   "scripts": {
     "chakra": "chakra",
     "db:generate": "pnpm lint:prisma && prisma generate --no-hints",
