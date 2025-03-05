@@ -36,7 +36,6 @@ const eslintConfig = [
           caughtErrorsIgnorePattern: '^_',
         },
       ],
-      'no-console': ['error', { allow: ['warn', 'error'] }],
       'no-relative-import-paths/no-relative-import-paths': [
         'error',
         {
@@ -56,7 +55,7 @@ const eslintConfig = [
     },
   },
   {
-    ignores: ['src/app/**/*', '*.config.*'],
+    ignores: ['src/app/**/*', 'src/scripts/**/*', '*.config.*'],
     rules: {
       'no-restricted-exports': [
         'error',
@@ -82,6 +81,12 @@ const eslintConfig = [
           ],
         },
       ],
+    },
+  },
+  {
+    ignores: ['src/scripts/**/*'],
+    rules: {
+      'no-console': ['error', { allow: ['warn', 'error'] }],
     },
   },
 ]

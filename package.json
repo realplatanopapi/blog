@@ -18,6 +18,7 @@
     "lint:prisma": "prisma-lint prisma/schema/",
     "lint:ts": "eslint --cache",
     "prepare": "is-in-ci || husky",
+    "rs": "ts-node src/scripts/util/runner.ts",
     "theme:generate": "chakra typegen ./src/theme/system.ts",
     "typecheck": "tsc --noEmit"
   },
@@ -27,6 +28,8 @@
     "@premieroctet/next-admin": "^7.3.0",
     "@prisma/client": "^6.4.1",
     "@sindresorhus/slugify": "^2.2.1",
+    "@swc/core": "^1.11.7",
+    "@swc/helpers": "^0.5.15",
     "@tailwindcss/typography": "^0.5.16",
     "@tiptap/core": "^2.11.5",
     "@tiptap/html": "^2.11.5",
@@ -34,6 +37,7 @@
     "@tiptap/react": "^2.11.5",
     "@tiptap/starter-kit": "^2.11.5",
     "classix": "^2.2.2",
+    "dotenv-flow": "^4.1.0",
     "envalid": "^8.0.0",
     "highlight.js": "^11.11.1",
     "iron-session": "^8.0.4",
@@ -47,8 +51,11 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "regenerator-runtime": "^0.14.1",
     "sanitize-html": "^2.14.0",
-    "ts-pattern": "^5.6.2"
+    "ts-node": "^10.9.2",
+    "ts-pattern": "^5.6.2",
+    "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@chakra-ui/cli": "^3.8.1",
