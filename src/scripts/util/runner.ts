@@ -10,10 +10,8 @@ async function runScript(scriptPath: string) {
 
   if (scriptModule.default) {
     ScriptClass = scriptModule.default
-  } else if (scriptModule.run) {
-    ScriptClass = scriptModule
   } else {
-    throw new Error(`Script ${scriptPath} does not export a run function`)
+    throw new Error(`Script ${scriptPath} has no default export`)
   }
 
   const script = new ScriptClass()
