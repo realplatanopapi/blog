@@ -1,11 +1,19 @@
 'use client'
 
+import './editor.css'
+
+import Placeholder from '@tiptap/extension-placeholder'
 import { EditorContent, useEditor, UseEditorOptions } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 
 import { Content } from './types'
 
-const extensions = [StarterKit]
+const extensions = [
+  StarterKit,
+  Placeholder.configure({
+    placeholder: 'Write something …',
+  }),
+]
 
 export type EditorOnUpdate = UseEditorOptions['onUpdate']
 
