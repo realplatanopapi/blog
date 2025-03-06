@@ -1,9 +1,9 @@
 import { BareLink, Heading, LogoIcon, LogoLink, Stack } from '@/components'
-import { BlogShell } from '@/features/layouts'
+import { Shell } from '@/features/layouts'
 
 export default function NotFound() {
   return (
-    <BlogShell>
+    <Shell>
       <Stack>
         <LogoLink>
           <LogoIcon />
@@ -11,6 +11,6 @@ export default function NotFound() {
         <Heading size="4xl">Not Found</Heading>
         <BareLink href="/">Return Home</BareLink>
       </Stack>
-    </BlogShell>
+    </Shell>
   )
 }

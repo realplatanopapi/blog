@@ -1,1 +1,1 @@
-export * from './blog-shell'
+export * from './shell'

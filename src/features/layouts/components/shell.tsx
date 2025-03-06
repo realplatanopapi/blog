@@ -4,7 +4,7 @@ import { Container, Flex, TextLink } from '@/components'
 import { AppearanceForm, AppearanceToggleButton } from '@/features/appearance/components'
 import { getAppearancePreference } from '@/features/appearance/server'
 
-export async function BlogShell({ children }: PropsWithChildren) {
+export async function Shell({ children }: PropsWithChildren) {
   const appearance = await getAppearancePreference()
 
   return (
