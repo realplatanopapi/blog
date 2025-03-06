@@ -1,4 +1,34 @@
 /**
+ * Editor
+ */
+.editor {
+  @apply w-full py-5;
+
+  /* Make it look like the published content as closely as possible */
+  color: var(--chakra-colors-fg);
+  font-family: var(--font-body);
+  font-size: var(--chakra-font-sizes-md);
+
+  .tiptap {
+    background-color: var(--chakra-colors-bg);
+  }
+
+  pre,
+  code {
+    font-family: var(--font-mono);
+    background: #0d1117;
+    color: #c9d1d9;
+    letter-spacing: inherit;
+  }
+
+  pre {
+    border-color: var(--global-color-border, currentColor);
+    border-style: solid;
+    border-width: 1px;
+  }
+}
+
+/**
  * Placeholder
  */
 p.is-editor-empty:first-child::before {

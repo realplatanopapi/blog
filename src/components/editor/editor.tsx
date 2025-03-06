@@ -51,12 +51,6 @@ export function Editor({ content = {}, editable = true, onUpdate }: EditorProps)
               Bold
             </button>
             <button
-              onClick={() => editor.chain().focus().toggleItalic().run()}
-              className={cx(editor.isActive('italic') && 'is-active')}
-            >
-              Italic
-            </button>
-            <button
               onClick={() => editor.chain().focus().toggleStrike().run()}
               className={cx(editor.isActive('strike') && 'is-active')}
             >
@@ -65,7 +59,7 @@ export function Editor({ content = {}, editable = true, onUpdate }: EditorProps)
           </div>
         </BubbleMenu>
       )}
-      <EditorContent className="w-full py-5" editor={editor} />
+      <EditorContent className="editor" editor={editor} />
     </>
   )
 }
