@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    optimizePackageImports: ['@chakra-ui/react', '@emotion/react', 'next-themes', 'react-icons'],
+    optimizePackageImports: ['@chakra-ui/react', '@emotion/react', 'next-themes', 'react-icons', '@tiptap/react'],
   },
   output: 'standalone',
   typescript: {
