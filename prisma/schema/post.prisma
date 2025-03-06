@@ -7,7 +7,6 @@ model Post {
   title       String
   subtitle    String?
   content     Json      @default("{}")
-  published   Boolean   @default(false)
   publishedAt DateTime? @map("published_at")
   PostTag     PostTag[]
 

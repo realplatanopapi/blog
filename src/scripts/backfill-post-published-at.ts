@@ -5,6 +5,7 @@ export default class BackfillPostPublishedAt implements Script {
   async run() {
     const posts = await dbClient.post.findMany({
       where: {
+        // @ts-expect-error - `published` was dropped.
         published: true,
         publishedAt: null,
       },
