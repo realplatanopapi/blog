@@ -4,7 +4,7 @@ primary_region = 'ord'
 [build]
 
 [deploy]
-  release_command = 'pnpm db:migrate'
+  release_command = 'pnpm db:migrate --skip-generate --skip-seed'
 
 [http_service]
   internal_port = 3000
