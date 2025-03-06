@@ -1,3 +1,4 @@
+import { isEmpty } from 'lodash-es'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -22,8 +23,11 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     },
   })
 
+  const subtitle = isEmpty(post.subtitle) ? undefined : post.subtitle
+
   return {
     title: post.title,
+    description: subtitle,
   }
 }
 
