@@ -25,10 +25,10 @@ export function Editor({ content = {}, editable = true, onUpdate }: EditorProps)
     editorProps: {
       attributes: {
         class:
-          'prose prose-md dark:prose-invert p-6 border border-solid border-slate-700 rounded-md focus:outline-none',
+          'prose prose-md dark:prose-invert p-6 border border-solid border-slate-700 mx-auto rounded-md focus:outline-none',
       },
     },
   })
 
-  return <EditorContent editor={editor} />
+  return <EditorContent className="w-full py-5" editor={editor} />
 }
