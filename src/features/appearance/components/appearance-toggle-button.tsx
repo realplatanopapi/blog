@@ -22,7 +22,7 @@ export function AppearanceToggleButton({ initial }: AppearanceToggleButtonProps)
   return (
     <>
       <input type="hidden" name={appearanceCookieName} value={value} />
-      <IconButton type="submit" variant="ghost" size="xs">
+      <IconButton type="submit" variant="outline" size="xs">
         <Icon>{icon}</Icon>
       </IconButton>
     </>
