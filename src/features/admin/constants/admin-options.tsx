@@ -15,7 +15,7 @@ export const adminOptions: NextAdminOptions = {
       icon: 'NewspaperIcon',
       permissions: ['edit', 'delete', 'create'],
       list: {
-        display: ['title', 'published', 'publishedAt', 'slug', 'id', 'createdAt', 'updatedAt'],
+        display: ['title', 'publishedAt', 'slug', 'id', 'createdAt', 'updatedAt'],
         search: ['title', 'subtitle'],
       },
       edit: {
@@ -48,7 +48,7 @@ export const adminOptions: NextAdminOptions = {
           id: 'publish',
           canExecute: (model) => {
             const post = model as Post
-            return !post.published
+            return !Boolean(post.publishedAt)
           },
           action: async (ids) => {
             const postIds = ids as string[]
@@ -73,7 +73,7 @@ export const adminOptions: NextAdminOptions = {
           id: 'unpublish',
           canExecute: (model) => {
             const post = model as Post
-            return post.published
+            return Boolean(post.publishedAt)
           },
           action: async (ids) => {
             const postIds = ids as string[]

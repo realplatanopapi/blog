@@ -12,10 +12,13 @@ interface PostPageProps {
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
   const { slug } = await params
 
+  const now = new Date()
   const post = await dbClient.post.findFirstOrThrow({
     where: {
       slug,
-      published: true,
+      publishedAt: {
+        lte: now,
+      },
     },
   })
 
@@ -26,11 +29,13 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params
-
+  const now = new Date()
   const post = await dbClient.post.findFirst({
     where: {
       slug,
-      published: true,
+      publishedAt: {
+        lte: now,
+      },
     },
   })
 
